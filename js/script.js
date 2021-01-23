@@ -107,8 +107,11 @@ const newHtml = createCats(cats);
 
 console.log(newHtml);
 
-//const container = document.querySelector("body"); 
-// Instead of body, you need to figure out how to make a new div
+const catContainer = document.querySelector(".cat-container");
+
+catContainer.innerHTML = finalCats;
+
+//How to return the function in the div on the page???
 
 //container.innerHTML = newHtml;
 
