@@ -1,13 +1,12 @@
-// Question 1 ÅÅÅ drit
+// Question 1
 
-//const cat = {
-  //  complain: function() {
-    //console.log(this.complain);
-//}
-//}
+const cat = {
+    complain: function() {
+    console.log("Meow!")
+    }
+}
 
-//cat.function();
-
+cat.complain();
 
 
 // Question 2
@@ -15,8 +14,6 @@
 const heading = document.querySelector("h3");
 
 heading.innerHTML = `<h3>Updated heading</h3>`;
-
-//console.log(heading);
 
 
 // Question 3
@@ -28,19 +25,21 @@ heading.style.fontSize = "2em";
 
 heading.classList.add("subheading");
 
-//console.log(heading);
 
-
-// Question 5 GAAAAD HOWWW
+// Question 5
 
 const paragraphs = document.querySelectorAll("p");
 
-//paragraphs.style.color = "red";
+function changeColor(paragraphs) {
+    for(let i = 0; i < paragraphs.length; i++) {
+        console.log(paragraphs[i]);
 
-for(let i = 0; i < paragraphs; i++){
+        const color = paragraphs[i];
+        color.style.color = "red";
+    }
 }
 
-console.log(paragraphs);
+changeColor(paragraphs);
 
 
 // Question 6
@@ -53,21 +52,6 @@ resultsContainer.style.backgroundColor = "yellow";
 
 // Question 7
 
-const cats = [
-    {
-        name: "Blob",
-        age: 10
-    },
-    {
-        name: "Harold",
-    },
-    {
-        name: "Blurt",
-        age: 21
-    }
-];
-
-
 function printName(list){
 
     for(let i = 0; i < list.length; i++) {
@@ -78,41 +62,31 @@ function printName(list){
 printName(cats);
 
 
-// Question 8 IT DOESNT WORRRRKKKK
-
+// Question 8
 
 function createCats(cats) {
 
-let listCats = "";
+    let listCats = "";
+    
+    for(let i = 0; i < cats.length; i++) {
 
-for(let i = 0; i < cats.length; i++) {
+        let age = "Age unknown";
 
-// console.log(items[i]);
+        if (cats[i].age) {
+            age = cats[i].age;
+        }
 
-listCats = listCats + "<h5>" + cats[i].name + "</h5><p>" + cats[i].age + "</p>";
+        listCats = listCats + "<h5>" + cats[i].name + "</h5><p>" + age + "</p>";
+    }
 
-// console.log(listItems);
-
+    let finalCats = "<div>" + listCats + "</div>";
+    return finalCats;
 }
 
-const finalCats = "<div>" + listCats+ "</div>";
-
-// console.log(finalHtml);
-
-return finalCats;
-
-}
+createCats(cats);
 
 const newHtml = createCats(cats);
-
 console.log(newHtml);
 
-const catContainer = document.querySelector(".cat-container");
-
-catContainer.innerHTML = finalCats;
-
-//How to return the function in the div on the page???
-
-//container.innerHTML = newHtml;
-
-
+catContainer = document.querySelector(".cat-container");
+catContainer.innerHTML = newHtml;
